@@ -7,29 +7,26 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.weserv.boundary.TelaCategoria;
 import com.example.weserv.boundary.TelaServico;
 import com.example.weserv.control.ControleCliente;
 import com.example.weserv.entity.Cliente;
 
 public class MainActivity extends AppCompatActivity {
-    Cliente cliente = ControleCliente.getCliente(1);
-
-    TextView nomeCliente;
+    private final Cliente cliente = ControleCliente.getCliente(1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        nomeCliente = findViewById(R.id.nomeCliente);
-        nomeCliente.setText("Olá, " + cliente.getNome());
+        TextView textViewBoasVindas;
+        textViewBoasVindas = findViewById(R.id.nomeCliente);
+        String boasVindas = "Olá, " + cliente.getNome();
+        textViewBoasVindas.setText(boasVindas);
     }
 
-    // inicia a intenção de pedir um serviço
     public void pedirServico(View view){
-        Intent it_telaCategoria = new Intent(MainActivity.this, TelaServico.class);
-        startActivity(it_telaCategoria);
+        Intent it_telaServico = new Intent(MainActivity.this, TelaServico.class);
+        startActivity(it_telaServico);
     }
-
 }

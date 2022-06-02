@@ -10,10 +10,14 @@
         <entry key="..\:/Users/Nivaldo Bueno/AndroidStudioProjects/weServ/app/src/main/res/layout/activity_pedir_servico.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Nivaldo Bueno/AndroidStudioProjects/weServ/app/src/main/res/layout/activity_tela_categoria.xml" value="0.33" />
         <entry key="..\:/Users/Nivaldo Bueno/AndroidStudioProjects/weServ/app/src/main/res/layout/activity_tela_categorias.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/Nivaldo Bueno/AndroidStudioProjects/weServ/app/src/main/res/layout/activity_tela_servico.xml" value="0.22" />
+        <entry key="..\:/Users/Nivaldo Bueno/AndroidStudioProjects/weServ/app/src/main/res/layout/activity_tela_servico.xml" value="0.25" />
         <entry key="..\:/Users/Nivaldo Bueno/AndroidStudioProjects/weServ/app/src/main/res/layout/definir_servico.xml" value="0.25" />
-        <entry key="..\:/Users/Nivaldo Bueno/AndroidStudioProjects/weServ/app/src/main/res/layout/fragment_tela_categoria.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Nivaldo Bueno/AndroidStudioProjects/weServ/app/src/main/res/layout/fragment_tela_categoria.xml" value="0.2" />
+        <entry key="..\:/Users/Nivaldo Bueno/AndroidStudioProjects/weServ/app/src/main/res/layout/fragment_tela_servico.xml" value="0.25" />
+        <entry key="..\:/Users/Nivaldo Bueno/AndroidStudioProjects/weServ/app/src/main/res/layout/fragment_tela_teste.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Nivaldo Bueno/AndroidStudioProjects/weServ/app/src/main/res/layout/fragment_teste.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Nivaldo Bueno/AndroidStudioProjects/weServ/app/src/main/res/layout/tela_categoria.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Nivaldo Bueno/AndroidStudioProjects/weServ/app/src/main/res/layout/teste.xml" value="0.33" />
       </map>
     </option>
   </component>
