@@ -1,17 +1,15 @@
 package com.example.weserv.entity;
 
-import java.util.ArrayList;
-
 public class Categoria {
     private int id;
-    private String nome;
+    private String nomeCategoria;
 
     public Categoria() {
     }
 
     public Categoria(int id, String nome) {
         this.id = id;
-        this.nome = nome;
+        this.nomeCategoria = nome;
     }
 
     public int getId() {
@@ -22,12 +20,19 @@ public class Categoria {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeCategoria() {
+        return nomeCategoria;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeCategoria(String nomeCategoria) {
+        this.nomeCategoria = nomeCategoria;
     }
 
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "id=" + id +
+                ", nomeCategoria='" + nomeCategoria + '\'' +
+                '}';
+    }
 }

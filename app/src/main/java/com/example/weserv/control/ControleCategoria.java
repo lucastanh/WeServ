@@ -8,12 +8,6 @@ import java.util.ArrayList;
 public class ControleCategoria {
     private TelaCategoria tc;
 
-
-
-    public ControleCategoria(TelaCategoria tc){
-        this.tc = tc;
-    }
-
     public ArrayList<Categoria> getCategoria() {
         ArrayList<Categoria> categorias = new ArrayList<>();
 
