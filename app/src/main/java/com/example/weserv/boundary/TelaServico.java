@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +29,7 @@ public class TelaServico extends AppCompatActivity {
     private FragmentTransaction ft;
     private EditText descricaoServico;
     private ConstraintLayout descricaoLayout;
+    private int codigoCliente;
 
     public TelaServico(){
         controleServico = new ControleServico();
@@ -37,6 +39,10 @@ public class TelaServico extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_servico);
+
+        Intent it = getIntent();
+        codigoCliente = it.getIntExtra("codigoCliente", 0);
+        controleServico.getServico().setCodigo(codigoCliente);
 
         fm = getSupportFragmentManager();
         descricaoEscolha = findViewById(R.id.descricaoEscolha);
@@ -100,10 +106,10 @@ public class TelaServico extends AppCompatActivity {
 
         descricaoLayout.setVisibility(View.INVISIBLE);
 
-        setarDescricaoPedidoFinalizado();
+        setarLayoutPedidoFinalizado();
     }
 
-    public void setarDescricaoPedidoFinalizado(){
+    public void setarLayoutPedidoFinalizado(){
         setTextEscolha("Pedido realizado com sucesso");
 
         descricaoEscolha.setY((float) 300);

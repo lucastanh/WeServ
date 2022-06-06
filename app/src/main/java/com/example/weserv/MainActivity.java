@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.weserv.boundary.TelaServico;
+import com.example.weserv.boundary.TelaVisualizacaoPedidos;
 import com.example.weserv.control.ControleCliente;
 import com.example.weserv.entity.Cliente;
 
@@ -27,10 +28,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void pedirServico(View view){
         Intent it_telaServico = new Intent(MainActivity.this, TelaServico.class);
+        it_telaServico.putExtra("codigoCliente", cliente.getCodigo());
         startActivity(it_telaServico);
     }
 
-//    public void visualizarPedidos(View view){
-//        Intent it_telaPedidos = new Intent(MainActivity.this, )
-//    }
+    public void visualizarPedidos(View view){
+        Intent it_telaVisualizacaoPedidos = new Intent(MainActivity.this, TelaVisualizacaoPedidos.class);
+        it_telaVisualizacaoPedidos.putExtra("codigoCliente", cliente.getCodigo());
+        startActivity(it_telaVisualizacaoPedidos);
+    }
+
+
 }
