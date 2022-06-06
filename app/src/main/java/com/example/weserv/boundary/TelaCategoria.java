@@ -16,11 +16,9 @@ import com.example.weserv.entity.Categoria;
 import java.util.ArrayList;
 
 public class TelaCategoria extends Fragment {
-    private ControleCategoria controleCategoria;
-    private LinearLayout buttonContainter;
+    private final ControleCategoria controleCategoria;
     private View view;
-
-    private TelaServico ts;
+    private final TelaServico ts;
 
     public TelaCategoria(TelaServico ts){
         this.ts = ts;
@@ -38,23 +36,20 @@ public class TelaCategoria extends Fragment {
 
     private void desenharTela() {
         ArrayList<Categoria> categorias = controleCategoria.getCategoria();
-        buttonContainter = view.findViewById(R.id.buttonContainter);
+        LinearLayout categoriaButtonContainter = view.findViewById(R.id.categoriaButtonContainer);
 
         for (int i = 0; i < categorias.size(); i++) {
             Button categoriaButton = new Button(getContext());
 
             categoriaButton.setText(categorias.get(i).getNomeCategoria());
             categoriaButton.setId(categorias.get(i).getId());
-            categoriaButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    int buttonID = v.getId();
-                    int id = buttonID - 1;
-                    ts.telaTipoServico(categorias.get(id));
-                }
+            categoriaButton.setOnClickListener(v -> {
+                int buttonID = v.getId();
+                int id = buttonID - 1;
+                ts.telaTipoServico(categorias.get(id));
             });
 
-            buttonContainter.addView(categoriaButton);
+            categoriaButtonContainter.addView(categoriaButton);
         }
     }
 

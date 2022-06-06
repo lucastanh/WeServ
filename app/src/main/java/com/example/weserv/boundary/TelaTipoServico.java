@@ -38,7 +38,7 @@ public class TelaTipoServico extends Fragment {
     private void desenharTela() {
         controleTipoServico = new ControleTipoServico();
         ArrayList<TipoServico> tipoServicos = controleTipoServico.getTipoServico();
-        buttonContainer = view.findViewById(R.id.buttonContainter);
+        buttonContainer = view.findViewById(R.id.categoriaButtonContainer);
 
         for(int i = 0; i < tipoServicos.size(); i++){
             Button buttonTipoServico = new Button(getContext());

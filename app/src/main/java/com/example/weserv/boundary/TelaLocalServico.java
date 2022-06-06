@@ -18,8 +18,7 @@ import java.util.ArrayList;
 
 public class TelaLocalServico extends Fragment {
     private View v;
-    private LinearLayout buttonContainer;
-    private TelaServico ts;
+    private final TelaServico ts;
 
     public TelaLocalServico(TelaServico ts){
         this.ts = ts;
@@ -38,7 +37,7 @@ public class TelaLocalServico extends Fragment {
     private void desenharTela(){
         ControleLocalServico controleLocalServico = new ControleLocalServico();
         ArrayList<LocalServico> locaisServico = controleLocalServico.getLocalServico();
-        buttonContainer = v.findViewById(R.id.buttonContainer);
+        LinearLayout buttonContainer = v.findViewById(R.id.buttonContainer);
 
         for(int i = 0; i < locaisServico.size(); i++) {
             Button buttonLocalServico = new Button(getContext());
@@ -46,11 +45,10 @@ public class TelaLocalServico extends Fragment {
             buttonLocalServico.setId(locaisServico.get(i).getId());
             buttonLocalServico.setText(locaisServico.get(i).getNomeLocalServico());
 
-            buttonLocalServico.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                }
+            buttonLocalServico.setOnClickListener(v -> {
+                int buttonID = v.getId();
+                int id = buttonID - 1;
+                ts.setarDescricao(locaisServico.get(id));
             });
 
             buttonContainer.addView(buttonLocalServico);

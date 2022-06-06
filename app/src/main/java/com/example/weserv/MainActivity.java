@@ -29,4 +29,8 @@ public class MainActivity extends AppCompatActivity {
         Intent it_telaServico = new Intent(MainActivity.this, TelaServico.class);
         startActivity(it_telaServico);
     }
+
+//    public void visualizarPedidos(View view){
+//        Intent it_telaPedidos = new Intent(MainActivity.this, )
+//    }
 }
