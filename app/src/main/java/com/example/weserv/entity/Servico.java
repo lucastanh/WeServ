@@ -2,6 +2,7 @@ package com.example.weserv.entity;
 
 public class Servico {
     private int codigo;
+    private int codigoCliente;
     private Categoria categoria;
     private TipoServico tipoServico;
     private LocalServico localServico;
@@ -23,6 +24,14 @@ public class Servico {
 
     public void setCodigo(int codigo) {
         this.codigo = codigo;
+    }
+
+    public int getCodigoCliente() {
+        return codigoCliente;
+    }
+
+    public void setCodigoCliente(int codigoCliente) {
+        this.codigoCliente = codigoCliente;
     }
 
     public Categoria getCategoria() {
@@ -61,9 +70,10 @@ public class Servico {
     public String toString() {
         return "Servico{" +
                 "codigo=" + codigo +
-                ", categoria=" + categoria +
-                ", tipoServico=" + tipoServico +
-                ", localServico=" + localServico +
+                ", codigoCliente=" + codigoCliente +
+                ", categoria=" + categoria.toString() +
+                ", tipoServico=" + tipoServico.toString() +
+                ", localServico=" + localServico.toString() +
                 ", descricao='" + descricao + '\'' +
                 '}';
     }
