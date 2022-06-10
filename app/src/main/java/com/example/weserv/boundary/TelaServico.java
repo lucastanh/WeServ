@@ -23,7 +23,6 @@ import com.example.weserv.entity.LocalServico;
 import com.example.weserv.entity.TipoServico;
 
 public class TelaServico extends AppCompatActivity {
-
     private final ControleServico controleServico;
 
     private TextView descricaoEscolha;
@@ -41,6 +40,9 @@ public class TelaServico extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_servico);
+
+        int codigoCliente = getIntent().getIntExtra("codigoCliente", 0);
+        controleServico.getServico().setCodigoCliente(codigoCliente);
 
         fm = getSupportFragmentManager();
         descricaoEscolha = findViewById(R.id.descricaoEscolha);
