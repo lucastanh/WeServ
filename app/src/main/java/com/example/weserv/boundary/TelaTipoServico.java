@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.weserv.R;
 import com.example.weserv.control.ControleTipoServico;
+import com.example.weserv.entity.Categoria;
 import com.example.weserv.entity.TipoServico;
 
 import java.util.ArrayList;
@@ -20,9 +21,11 @@ public class TelaTipoServico extends Fragment {
     private LinearLayout buttonContainer;
     private View view;
     private TelaServico ts;
+    private Categoria categoria;
 
-    public TelaTipoServico(TelaServico ts){
+    public TelaTipoServico(TelaServico ts, Categoria categoria){
         this.ts = ts;
+        this.categoria = categoria;
     }
 
     @Override
@@ -37,21 +40,23 @@ public class TelaTipoServico extends Fragment {
 
     private void desenharTela() {
         controleTipoServico = new ControleTipoServico();
-        ArrayList<TipoServico> tipoServicos = controleTipoServico.getTipoServico();
+
+        TipoServico[] tiposServico = controleTipoServico.getTipoServico(categoria.getId());
+
         buttonContainer = view.findViewById(R.id.categoriaButtonContainer);
 
-        for(int i = 0; i < tipoServicos.size(); i++){
+        for(int i = 0; i < tiposServico.length; i++){
             Button buttonTipoServico = new Button(getContext());
 
-            buttonTipoServico.setId(tipoServicos.get(i).getId());
-            buttonTipoServico.setText(tipoServicos.get(i).getNomeTipoServico());
+            buttonTipoServico.setId(tiposServico[i].getId());
+            buttonTipoServico.setText(tiposServico[i].getNomeTipoServico());
 
             buttonTipoServico.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     int buttonID = v.getId();
                     int id = buttonID - 1;
-                    ts.telaLocalServico(tipoServicos.get(id));
+                    ts.telaLocalServico(tiposServico[id]);
                 }
             });
 

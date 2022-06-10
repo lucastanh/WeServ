@@ -9,7 +9,6 @@ public class Pessoa  {
     private String cpf;
     private String celular;
     private String email;
-    private char tipo;
 
     public Pessoa() {
     }
@@ -21,7 +20,6 @@ public class Pessoa  {
         this.cpf = cpf;
         this.celular = celular;
         this.email = email;
-        this.tipo = tipo;
     }
 
     public int getCodigo() {
@@ -72,14 +70,6 @@ public class Pessoa  {
         this.email = email;
     }
 
-    public char getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(char tipo) {
-        this.tipo = tipo;
-    }
-
     @Override
     public String toString() {
         return "Pessoa{" +
@@ -89,7 +79,6 @@ public class Pessoa  {
                 ", cpf='" + cpf + '\'' +
                 ", celular='" + celular + '\'' +
                 ", email='" + email + '\'' +
-                ", tipo=" + tipo +
                 '}';
     }
 }

@@ -1,20 +1,17 @@
 package com.example.weserv.control;
 
 import com.example.weserv.boundary.TelaCategoria;
+import com.example.weserv.conexao.Dados;
 import com.example.weserv.entity.Categoria;
 
 import java.util.ArrayList;
 
 public class ControleCategoria {
-    private TelaCategoria tc;
 
-    public ArrayList<Categoria> getCategoria() {
-        ArrayList<Categoria> categorias = new ArrayList<>();
+    public Categoria[] getCategoria() {
+        Dados dados = new Dados();
 
-        categorias.add(new Categoria(1, "Diarista"));
-        categorias.add(new Categoria(2, "Pedreiro"));
-        categorias.add(new Categoria(3, "Ar condicionado"));
-        categorias.add(new Categoria(4, "Psicólogo"));
+        Categoria[] categorias = Dados.categorias;
 
         return categorias;
     }

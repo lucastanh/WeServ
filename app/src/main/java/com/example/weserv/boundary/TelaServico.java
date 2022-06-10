@@ -7,13 +7,16 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.weserv.MainActivity;
 import com.example.weserv.R;
+import com.example.weserv.conexao.Dados;
 import com.example.weserv.control.ControleServico;
 import com.example.weserv.entity.Categoria;
 import com.example.weserv.entity.LocalServico;
@@ -21,9 +24,10 @@ import com.example.weserv.entity.TipoServico;
 
 public class TelaServico extends AppCompatActivity {
 
+    private final ControleServico controleServico;
+
     private TextView descricaoEscolha;
     private Button buttonVoltar;
-    private final ControleServico controleServico;
     private FragmentManager fm;
     private FragmentTransaction ft;
     private EditText descricaoServico;
@@ -44,6 +48,10 @@ public class TelaServico extends AppCompatActivity {
         descricaoLayout = findViewById(R.id.descricaoLayout);
         descricaoServico = findViewById(R.id.descricaoServico);
 
+        desenharTela();
+    }
+
+    private void desenharTela(){
         telaCategoria();
     }
 
@@ -61,7 +69,7 @@ public class TelaServico extends AppCompatActivity {
         this.controleServico.getServico().setCategoria(categoria);
 
         setTextEscolha("Qual serviço você procura");
-        TelaTipoServico tts = new TelaTipoServico(this);
+        TelaTipoServico tts = new TelaTipoServico(this, categoria);
         ft = fm.beginTransaction();
         ft.replace(R.id.fragmentContainer, tts);
         ft.commit();
@@ -104,6 +112,8 @@ public class TelaServico extends AppCompatActivity {
     }
 
     public void setarDescricaoPedidoFinalizado(){
+        Dados.servicos.add(controleServico.getServico());
+
         setTextEscolha("Pedido realizado com sucesso");
 
         descricaoEscolha.setY((float) 300);
