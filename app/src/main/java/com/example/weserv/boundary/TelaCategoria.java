@@ -17,7 +17,9 @@ import java.util.ArrayList;
 
 public class TelaCategoria extends Fragment {
     private final ControleCategoria controleCategoria;
+
     private View view;
+
     private final TelaServico ts;
 
     public TelaCategoria(TelaServico ts){
@@ -35,18 +37,21 @@ public class TelaCategoria extends Fragment {
     }
 
     private void desenharTela() {
-        ArrayList<Categoria> categorias = controleCategoria.getCategoria();
+        Categoria[] categorias = controleCategoria.getCategoria();
+
         LinearLayout categoriaButtonContainter = view.findViewById(R.id.categoriaButtonContainer);
 
-        for (int i = 0; i < categorias.size(); i++) {
+        for (int i = 0; i < categorias.length; i++) {
             Button categoriaButton = new Button(getContext());
 
-            categoriaButton.setText(categorias.get(i).getNomeCategoria());
-            categoriaButton.setId(categorias.get(i).getId());
+            categoriaButton.setText(categorias[i].getNomeCategoria());
+            categoriaButton.setId(categorias[i].getId());
+
             categoriaButton.setOnClickListener(v -> {
                 int buttonID = v.getId();
                 int id = buttonID - 1;
-                ts.telaTipoServico(categorias.get(id));
+
+                ts.telaTipoServico(categorias[id]);
             });
 
             categoriaButtonContainter.addView(categoriaButton);
