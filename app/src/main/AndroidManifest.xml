@@ -14,9 +14,8 @@
         android:theme="@style/Theme.WeServ"
         tools:targetApi="31">
         <activity
-            android:name=".ui.login.TelaLogin"
-            android:exported="false"
-            android:label="@string/title_activity_tela_login" />
+            android:name=".MainActivity"
+            android:exported="false" />
         <activity
             android:name=".boundary.TelaPedidos"
             android:exported="false" />
@@ -27,7 +26,7 @@
             android:name=".boundary.TelaCategoria"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".boundary.TelaLogin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
