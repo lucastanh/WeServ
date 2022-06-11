@@ -16,11 +16,15 @@ import com.example.weserv.entity.Categoria;
 import java.util.ArrayList;
 
 public class TelaCategoria extends Fragment {
-    private final ControleCategoria controleCategoria;
+    private ControleCategoria controleCategoria;
 
     private View view;
 
-    private final TelaServico ts;
+    private TelaServico ts;
+
+    public TelaCategoria(){
+
+    }
 
     public TelaCategoria(TelaServico ts){
         this.ts = ts;
