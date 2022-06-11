@@ -38,5 +38,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(it_telaVisualizacaoPedidos);
     }
 
-
 }

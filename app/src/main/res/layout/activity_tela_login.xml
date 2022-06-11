@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/arte1"
+        android:src="@drawable/arte_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -20,10 +20,10 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_Titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="30dp"
         android:text="WeServ"
         android:textColor="#FFFFFF"
         android:textSize="48sp"
@@ -33,29 +33,136 @@
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <View
-        android:id="@+id/loginContainer"
-        android:layout_width="361dp"
-        android:layout_height="225dp"
+        android:id="@+id/textContainer"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/imageView"
-        tools:layout_editor_absoluteY="349dp" />
+        app:layout_constraintTop_toBottomOf="@id/tv_Titulo" />
+
+    <TextView
+        android:id="@+id/textConectamos"
+        style="@style/Text_view_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginStart="0dp"
+        android:text="Conectamos"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@id/textContainer"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/textContainer"
+        app:layout_constraintTop_toTopOf="@id/textContainer" />
+
+    <TextView
+        android:id="@+id/textCom"
+        style="@style/Text_view_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="12dp"
+        android:text="com"
+        android:textColor="@color/white"
+
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@id/textContainer"
+        app:layout_constraintTop_toBottomOf="@id/textConectamos" />
+
+    <TextView
+        android:id="@+id/textServicos"
+        style="@style/Text_view_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="0dp"
+        android:text="serviços"
+        android:textColor="@color/cor_primaria"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@id/textContainer"
+        app:layout_constraintHorizontal_bias="0.338"
+        app:layout_constraintStart_toEndOf="@id/textConectamos"
+        app:layout_constraintTop_toTopOf="@id/textContainer" />
+
+    <TextView
+        android:id="@+id/textProfissionalismo"
+        style="@style/Text_view_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:text="Profissionalismo"
+        android:textColor="@color/cor_primaria"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@id/textCom"
+        app:layout_constraintEnd_toEndOf="@id/textContainer"
+        app:layout_constraintTop_toBottomOf="@id/textServicos" />
+
+    <View
+        android:id="@+id/loginContainer"
+        android:layout_width="380dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/textContainer" />
 
     <EditText
         android:id="@+id/editEmail"
         style="@style/Edit_text"
+        android:fontFamily="sans-serif"
         android:hint="Email"
-        app:layout_constraintStart_toStartOf="@id/loginContainer"
+        android:textColorHint="@color/cor_primaria"
+        android:typeface="normal"
         app:layout_constraintEnd_toEndOf="@id/loginContainer"
-        app:layout_constraintTop_toTopOf="@id/loginContainer"/>
+        app:layout_constraintStart_toStartOf="@id/loginContainer"
+        app:layout_constraintTop_toTopOf="@id/loginContainer" />
 
     <EditText
         android:id="@+id/editSenha"
         style="@style/Edit_text"
         android:hint="Senha"
+        android:textColorHint="@color/cor_primaria"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="@id/loginContainer"
         app:layout_constraintEnd_toEndOf="@id/loginContainer"
         app:layout_constraintTop_toBottomOf="@id/editEmail"/>
+
+    <Button
+        android:id="@+id/buttonEntrar"
+        style="@style/buttonLogin"
+        android:onClick="buttonLogin"
+        app:layout_constraintStart_toStartOf="@id/loginContainer"
+        app:layout_constraintEnd_toEndOf="@id/loginContainer"
+        app:layout_constraintTop_toBottomOf="@id/editSenha"
+        android:text="ENTRAR"/>
+
+    <TextView
+        android:id="@+id/tv_criarConta"
+        style="@style/Text_view_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="0dp"
+        android:text="Não tem uma conta?"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/loginContainer"
+        app:layout_constraintStart_toStartOf="@id/loginContainer"
+        app:layout_constraintTop_toBottomOf="@id/buttonEntrar" />
+
+    <Button
+        style="@style/buttonLogin"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/loginContainer"
+        app:layout_constraintEnd_toEndOf="@id/loginContainer"
+        app:layout_constraintTop_toBottomOf="@id/tv_criarConta"
+        android:text="CRIAR CONTA"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
