@@ -2,7 +2,6 @@ package com.example.weserv.conexao;
 
 import com.example.weserv.entity.Categoria;
 import com.example.weserv.entity.Cliente;
-import com.example.weserv.entity.LocalServico;
 import com.example.weserv.entity.Login;
 import com.example.weserv.entity.Servico;
 
@@ -19,10 +18,10 @@ public class Dados implements Serializable {
 
     // Dados de categoria
     public static Categoria[] categorias = new Categoria[]{
-            new Categoria(1, "Diarista"),
-            new Categoria(2, "Pedreiro"),
-            new Categoria(3, "Ar Condicionado"),
-            new Categoria(4, "Psicólogo")
+                    new Categoria(1, "Diarista"),
+                    new Categoria(2, "Pedreiro"),
+                    new Categoria(3, "Ar Condicionado"),
+                    new Categoria(4, "Psicólogo")
     };
 
     // Dados de servico
@@ -47,16 +46,7 @@ public class Dados implements Serializable {
     // Dados de login
     public static ArrayList<Login> logins = new ArrayList<Login>(){
         {
-            add(new Login("", "", 1));
+            add(new Login("teste", "teste", 1));
         }
-    };
-
-    // Dados de local de serviço
-    public static LocalServico[] locaisServico = new LocalServico[]{
-            new LocalServico(1, "Apartamento"),
-            new LocalServico(2, "Casa"),
-            new LocalServico(3, "Comercial/Escritório"),
-            new LocalServico(4, "Condomínio"),
-            new LocalServico(5, "Outro")
     };
 }

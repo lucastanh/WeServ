@@ -9,7 +9,7 @@ public class ControleLogin {
 
 
     // Função para validar informações de login recebidos da tela de login
-    public int validarLogin(String email, String senha){
+    public boolean validarLogin(String email, String senha){
 
         // consulta ao banco de dados trazendo todos os logins
         ArrayList<Login> logins = Dados.logins;
@@ -21,11 +21,11 @@ public class ControleLogin {
             String senhaBanco = login.getSenha();
 
             if(email.intern() == emailBanco.intern() && senha.intern() == senhaBanco.intern()){// caso email e senha estejam no banco de dados, o login é válido
-                return login.getCodigoCliente();
+                return true;
             }
         }
 
-        return -1;
+        return false;
 
     }
 }

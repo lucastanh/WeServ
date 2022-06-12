@@ -1,6 +1,5 @@
 package com.example.weserv.boundary;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +22,10 @@ public class TelaCategoria extends Fragment {
 
     private TelaServico ts;
 
+    public TelaCategoria(){
+
+    }
+
     public TelaCategoria(TelaServico ts){
         this.ts = ts;
         this.controleCategoria = new ControleCategoria();
@@ -37,14 +40,13 @@ public class TelaCategoria extends Fragment {
         return view;
     }
 
-    @SuppressLint("ResourceType")
     private void desenharTela() {
         Categoria[] categorias = controleCategoria.getCategoria();
 
         LinearLayout categoriaButtonContainter = view.findViewById(R.id.categoriaButtonContainer);
 
         for (int i = 0; i < categorias.length; i++) {
-            Button categoriaButton = (Button)getLayoutInflater().inflate(R.layout.button, null);
+            Button categoriaButton = new Button(getContext());
 
             categoriaButton.setText(categorias[i].getNomeCategoria());
             categoriaButton.setId(categorias[i].getId());
