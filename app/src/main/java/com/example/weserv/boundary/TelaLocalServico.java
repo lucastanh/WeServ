@@ -19,9 +19,11 @@ import java.util.ArrayList;
 public class TelaLocalServico extends Fragment {
     private View v;
     private final TelaServico ts;
+    private ControleLocalServico controleLocalServico;
 
     public TelaLocalServico(TelaServico ts){
         this.ts = ts;
+        this.controleLocalServico = new ControleLocalServico();
     }
 
     @Override
@@ -35,20 +37,19 @@ public class TelaLocalServico extends Fragment {
     }
 
     private void desenharTela(){
-        ControleLocalServico controleLocalServico = new ControleLocalServico();
-        ArrayList<LocalServico> locaisServico = controleLocalServico.getLocalServico();
+        LocalServico[] locaisServico = controleLocalServico.getLocaisServico();
         LinearLayout buttonContainer = v.findViewById(R.id.buttonContainer);
 
-        for(int i = 0; i < locaisServico.size(); i++) {
-            Button buttonLocalServico = new Button(getContext());
+        for(int i = 0; i < locaisServico.length; i++) {
+            Button buttonLocalServico = (Button)getLayoutInflater().inflate(R.layout.button, null);
 
-            buttonLocalServico.setId(locaisServico.get(i).getId());
-            buttonLocalServico.setText(locaisServico.get(i).getNomeLocalServico());
+            buttonLocalServico.setId(locaisServico[i].getId());
+            buttonLocalServico.setText(locaisServico[i].getNomeLocalServico());
 
             buttonLocalServico.setOnClickListener(v -> {
                 int buttonID = v.getId();
                 int id = buttonID - 1;
-                ts.setarDescricao(locaisServico.get(id));
+                ts.setarDescricao(locaisServico[id]);
             });
 
             buttonContainer.addView(buttonLocalServico);

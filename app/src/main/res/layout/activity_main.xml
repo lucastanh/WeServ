@@ -6,43 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/buttonPedir"
-        android:layout_width="270dp"
-        android:layout_height="65dp"
-        android:onClick="pedirServico"
-        android:text="Pedir"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomeCliente"
-        app:layout_constraintVertical_bias="0.26" />
-
-    <Button
-        android:id="@+id/buttonSeusPedidos"
-        android:layout_width="270dp"
-        android:layout_height="65dp"
-        android:onClick="visualizarPedidos"
-        android:text="Seus Pedidos"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomeCliente"
-        app:layout_constraintVertical_bias="0.457" />
-
     <TextView
         android:id="@+id/nomeCliente"
+        android:textColor="@color/cor_primaria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="92dp"
         android:text="Olá, &quot;cliente&quot;"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/componentContainer"
+        android:layout_width="380dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nomeCliente" />
+
+    <Button
+        android:id="@+id/buttonPedir"
+        style="@style/buttonLogin"
+        android:layout_marginTop="15dp"
+        android:onClick="pedirServico"
+        android:text="Pedir"
+        app:layout_constraintEnd_toEndOf="@id/componentContainer"
+        app:layout_constraintStart_toStartOf="@id/componentContainer"
+        app:layout_constraintTop_toTopOf="@id/componentContainer" />
+
+    <Button
+        android:id="@+id/buttomPedidos"
+        style="@style/buttonLogin"
+        android:layout_marginTop="25dp"
+        android:onClick="visualizarPedidos"
+        android:text="Seus pedidos"
+        app:layout_constraintEnd_toEndOf="@id/componentContainer"
+        app:layout_constraintHorizontal_bias="0.816"
+        app:layout_constraintStart_toStartOf="@id/componentContainer"
+        app:layout_constraintTop_toBottomOf="@id/buttonPedir" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,86 +7,80 @@
 
     <TextView
         android:id="@+id/descricaoEscolha"
-        android:layout_width="wrap_content"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:textAlignment="center"
         android:text="Selecione a categoria"
-        android:textSize="24sp"
+        android:textSize="34dp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/cor_primaria"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.116" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/descricaoLayout"
         android:layout_width="293dp"
         android:layout_height="365dp"
+        android:layout_marginTop="50dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.748"
-        tools:visibility="gone">
+        app:layout_constraintTop_toBottomOf="@+id/descricaoEscolha">
 
         <EditText
             android:id="@+id/descricaoServico"
-            android:layout_width="fill_parent"
-            android:layout_height="191dp"
+            style="@style/Edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_margin="0dp"
             android:ems="10"
-            android:gravity="top"
-            android:inputType="text"
-            android:textColor="#000000"
-            app:layout_constraintBottom_toTopOf="@+id/concluirPedidoButton"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            tools:visibility="invisible" />
 
         <Button
             android:id="@+id/concluirPedidoButton"
-            android:layout_width="wrap_content"
+            style="@style/buttonLogin"
+            android:layout_width="294dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:onClick="concluirPedido"
             android:text="Concluir pedido"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.801" />
+            app:layout_constraintTop_toBottomOf="@id/descricaoServico" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
         android:id="@+id/fragmentContainer"
-        android:layout_width="303dp"
-        android:layout_height="352dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="340dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.882"
-        tools:ignore="MissingConstraints"
-        tools:visibility="gone">
-
-    </FrameLayout>
+        app:layout_constraintTop_toBottomOf="@id/descricaoEscolha"
+        tools:visibility="gone" />
 
     <Button
         android:id="@+id/buttonVoltar"
-        android:layout_width="wrap_content"
+        style="@style/buttonLogin"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="296dp"
         android:onClick="voltarMenuPrincipal"
         android:text="Voltar"
         android:textSize="20sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.532" />
+        app:layout_constraintEnd_toEndOf="@id/descricaoLayout"
+        app:layout_constraintStart_toStartOf="@id/descricaoLayout"
+        app:layout_constraintTop_toBottomOf="@+id/descricaoEscolha" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

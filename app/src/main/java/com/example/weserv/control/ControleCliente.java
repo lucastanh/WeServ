@@ -1,16 +1,35 @@
 package com.example.weserv.control;
 
+import com.example.weserv.conexao.Dados;
 import com.example.weserv.entity.Cliente;
 
+import java.util.ArrayList;
+
 public class ControleCliente {
+    Cliente cliente;
 
-    public static Cliente getCliente(int id){
+    public ControleCliente(int codigoCliente){
+        this.cliente = this.getCliente(codigoCliente);
+    }
 
-        // Lógica para instanciar cliente com o resultado da pesquisa no banco de dados com o id recebido e retorná-lo
+    public static Cliente getCliente(int codigoCliente){
+        ArrayList<Cliente> clientes = Dados.clientes;
 
-        Cliente cliente = new Cliente(id, "Lucas Vinicius", "13/11/00", "111.222.333-44", "44987654321", "lucas@email.com", 'c', true, true);
+        for(int i = 0; i < clientes.size(); i++){
+            Cliente cliente = clientes.get(i);
 
+            if(cliente.getCodigo() == codigoCliente){
+                return cliente;
+            }
+        }
+        return null;
+    }
+
+    public Cliente getCliente() {
         return cliente;
     }
 
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 }

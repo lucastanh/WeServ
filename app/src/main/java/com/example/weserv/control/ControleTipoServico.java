@@ -8,10 +8,12 @@ import java.util.Dictionary;
 
 public class ControleTipoServico {
 
-        public TipoServico[] getTipoServico(int idCategoria){
+    public ControleTipoServico(){
+    }
 
-            TipoServico[] tiposServico = Dados.categorias[idCategoria - 1].getTiposServico();
+    public TipoServico[] getTiposServico(int idCategoria){
+        TipoServico[] tiposServico = Dados.categorias[idCategoria - 1].getTiposServico();
 
-            return tiposServico;
-        }
+        return tiposServico;
+    }
 }

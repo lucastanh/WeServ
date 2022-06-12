@@ -8,9 +8,10 @@ import java.util.ArrayList;
 
 public class ControleCategoria {
 
-    public Categoria[] getCategoria() {
-        Dados dados = new Dados();
+    public ControleCategoria(){
+    }
 
+    public static Categoria[] getCategoria() {
         Categoria[] categorias = Dados.categorias;
 
         return categorias;
