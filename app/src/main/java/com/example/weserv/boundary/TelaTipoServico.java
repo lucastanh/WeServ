@@ -17,15 +17,17 @@ import com.example.weserv.entity.TipoServico;
 import java.util.ArrayList;
 
 public class TelaTipoServico extends Fragment {
+    private TelaServico ts;
     private ControleTipoServico controleTipoServico;
+    private int idCategoria;
+
     private LinearLayout buttonContainer;
     private View view;
-    private TelaServico ts;
-    private Categoria categoria;
 
-    public TelaTipoServico(TelaServico ts, Categoria categoria){
+    public TelaTipoServico(TelaServico ts, int idCategoria){
         this.ts = ts;
-        this.categoria = categoria;
+        this.controleTipoServico = new ControleTipoServico();
+        this.idCategoria = idCategoria;
     }
 
     @Override
@@ -39,14 +41,12 @@ public class TelaTipoServico extends Fragment {
     }
 
     private void desenharTela() {
-        controleTipoServico = new ControleTipoServico();
-
-        TipoServico[] tiposServico = controleTipoServico.getTipoServico(categoria.getId());
+        TipoServico[] tiposServico = controleTipoServico.getTiposServico(idCategoria);
 
         buttonContainer = view.findViewById(R.id.categoriaButtonContainer);
 
         for(int i = 0; i < tiposServico.length; i++){
-            Button buttonTipoServico = new Button(getContext());
+            Button buttonTipoServico = (Button)getLayoutInflater().inflate(R.layout.button, null);
 
             buttonTipoServico.setId(tiposServico[i].getId());
             buttonTipoServico.setText(tiposServico[i].getNomeTipoServico());

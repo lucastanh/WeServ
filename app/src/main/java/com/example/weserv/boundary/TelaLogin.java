@@ -36,12 +36,11 @@ public class TelaLogin extends AppCompatActivity {
         String email = editEmail.getText().toString();
         String senha = editSenha.getText().toString();
 
-        boolean loginValido = this.controleLogin.validarLogin(email, senha);
-        System.out.println(loginValido);
+        int codigoCliente = this.controleLogin.validarLogin(email, senha);
 
-        if(loginValido){
+        if(codigoCliente != -1){
             Intent it_main = new Intent(this, MainActivity.class);
-//            it_main.putExtra("codigoCliente", );
+            it_main.putExtra("codigoCliente", codigoCliente);
             startActivity(it_main);
             finish();
         }

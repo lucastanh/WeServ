@@ -11,7 +11,9 @@ public class Servico {
     public Servico() {
     }
 
-    public Servico(Categoria categoria, TipoServico tipoServico, LocalServico localServico, String descricao) {
+    public Servico(int codigo, int codigoCliente, Categoria categoria, TipoServico tipoServico, LocalServico localServico, String descricao) {
+        this.codigo = codigo;
+        this.codigoCliente = codigoCliente;
         this.categoria = categoria;
         this.tipoServico = tipoServico;
         this.localServico = localServico;
@@ -64,17 +66,5 @@ public class Servico {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    @Override
-    public String toString() {
-        return "Servico{" +
-                "codigo=" + codigo +
-                ", codigoCliente=" + codigoCliente +
-                ", categoria=" + categoria.toString() +
-                ", tipoServico=" + tipoServico.toString() +
-                ", localServico=" + localServico.toString() +
-                ", descricao='" + descricao + '\'' +
-                '}';
     }
 }

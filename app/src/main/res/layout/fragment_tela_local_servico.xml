@@ -5,4 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".boundary.TelaLocalServico" />
+    tools:context=".boundary.TelaLocalServico"
+    android:showDividers="middle"
+    android:divider="@drawable/empty_tall_divider"/>
