@@ -5,30 +5,55 @@
     android:id="@+id/cellContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".boundary.TelaPedidos">
+    tools:context=".boundary.TelaPedidos"
+    android:showDividers="middle"
+    android:divider="@drawable/empty_tall_divider">
+
+    <TextView
+        android:id="@+id/tv_seusPedidos"
+        android:textColor="@color/cor_primaria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:text="Seus pedidos"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cell"
-        android:layout_width="374dp"
-        android:layout_height="81dp"
-        android:layout_marginBottom="20px"
-        android:background="#F6DEDE"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/semPedidos"
+        style="@style/celulaPedido"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024"
-        tools:context=".boundary.TelaPedidos">
+        app:layout_constraintTop_toBottomOf="@+id/tv_seusPedidos">
 
         <TextView
-            android:id="@+id/teste"
+            android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="Ainda não há pedidos"
+            android:textColor="@color/cor_primaria"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/pedidosContainer"
+        android:layout_width="360dp"
+        android:layout_height="535dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_seusPedidos">
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

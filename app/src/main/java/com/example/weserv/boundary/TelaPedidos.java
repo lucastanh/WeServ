@@ -1,18 +1,29 @@
 package com.example.weserv.boundary;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.weserv.R;
 import com.example.weserv.conexao.Dados;
+import com.example.weserv.control.ControleServico;
 import com.example.weserv.entity.Servico;
 
 import java.util.ArrayList;
 
 public class TelaPedidos extends AppCompatActivity {
+
+    ConstraintLayout semPedido;
+    LinearLayout pedidosContainer;
+    ControleServico controleServico;
+
+    public TelaPedidos(){
+        this.controleServico = new ControleServico();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,15 +32,38 @@ public class TelaPedidos extends AppCompatActivity {
 
         int codigoCliente = getIntent().getIntExtra("codigoCliente", 0);
 
-        TextView teste = findViewById(R.id.teste);
+        semPedido = findViewById(R.id.semPedidos);
+        pedidosContainer = findViewById(R.id.pedidosContainer);
 
-        ArrayList<Servico> servicosCliente = Dados.getServicosCliente(codigoCliente);
+        desenharTela();
+    }
 
-        if(servicosCliente.size() == 0) {
-            teste.setText("Ainda não há pedidos");
+    private void desenharTela(){
+        ArrayList<Servico> servicos = Dados.servicos;
+
+        if(servicos.size() == 0){
+            semPedido.setVisibility(View.VISIBLE);
         } else {
-            teste.setText(servicosCliente.get(0).getCategoria().getNomeCategoria());
+            pedidosContainer.setVisibility(View.VISIBLE);
+
+            for(int i = 0; i < servicos.size(); i++){
+                ConstraintLayout pedido_layout = (ConstraintLayout) getLayoutInflater().inflate(R.layout.pedido_layout, null);
+
+                TextView categoria, tipoServico, localServico;
+
+                categoria = pedido_layout.findViewById(R.id.categoria);
+                tipoServico = pedido_layout.findViewById(R.id.tipoServico);
+                localServico = pedido_layout.findViewById(R.id.localServico);
+
+                categoria.setText(servicos.get(i).getCategoria().getNomeCategoria());
+                tipoServico.setText(servicos.get(i).getTipoServico().getNomeTipoServico());
+                localServico.setText(servicos.get(i).getLocalServico().getNomeLocalServico());
+
+                pedidosContainer.addView(pedido_layout);
+            }
+
         }
+
     }
 }
 
