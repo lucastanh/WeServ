@@ -1,6 +1,7 @@
 package com.example.weserv.control;
 
 import com.example.weserv.boundary.TelaServico;
+import com.example.weserv.conexao.Dados;
 import com.example.weserv.entity.Servico;
 
 public class ControleServico {
@@ -12,5 +13,9 @@ public class ControleServico {
 
     public Servico getServico() {
         return servico;
+    }
+
+    public void gravarServico(){
+        Dados.servicos.add(this.servico);
     }
 }

@@ -57,9 +57,7 @@ public class TelaServico extends AppCompatActivity {
 
     private void telaCategoria(){
         TelaCategoria tc = new TelaCategoria(this);
-
         setTextEscolha("Escolha uma categoria");
-
         ft = fm.beginTransaction();
         ft.add(R.id.fragmentContainer, tc);
         ft.commit();
@@ -67,9 +65,7 @@ public class TelaServico extends AppCompatActivity {
 
     public void telaTipoServico(Categoria categoria){
         this.controleServico.getServico().setCategoria(categoria);
-
         setTextEscolha("Qual serviço você procura");
-
         TelaTipoServico tts = new TelaTipoServico(this, categoria.getId());
         ft = fm.beginTransaction();
         ft.replace(R.id.fragmentContainer, tts);
@@ -88,33 +84,24 @@ public class TelaServico extends AppCompatActivity {
 
     public void setarDescricao(LocalServico localServico){
         this.controleServico.getServico().setLocalServico(localServico);
-
-        System.out.println(this.controleServico.getServico().toString());
-
         setTextEscolha("Descrição do serviço");
         Fragment fragment = fm.findFragmentById(R.id.fragmentContainer);
         ft = fm.beginTransaction();
         assert fragment != null;
         ft.remove(fragment);
         ft.commit();
-
         descricaoLayout.setVisibility(View.VISIBLE);
-
     }
 
     public void concluirPedido(View view){
         String descricaoServicoText = descricaoServico.getText().toString();
-
         this.controleServico.getServico().setDescricao(descricaoServicoText);
-
+        controleServico.gravarServico();
         descricaoLayout.setVisibility(View.INVISIBLE);
-
         setarLayoutPedidoFinalizado();
     }
 
     public void setarLayoutPedidoFinalizado(){
-        Dados.servicos.add(controleServico.getServico());
-
         setTextEscolha("Pedido realizado com sucesso");
 
         descricaoEscolha.setY((float) 300);
