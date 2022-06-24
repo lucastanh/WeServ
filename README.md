@@ -7,3 +7,7 @@ O principal objeto é o desenvolvimento de um aplicativo voltado para a área de
 ## Sobre o WeServ
 A propósta do nosso projeto é a criação de um aplicativo de delivery de serviços(WeServ), onde o cliente poderá usá-lo para solicitar um serviço e colaboradores poderão prestar os serviços solicitados.
 
+# Licença
+The MIT License (MIT)
+
+Copyright ©️ 2022 - WeServ
