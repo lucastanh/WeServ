@@ -12,7 +12,7 @@ A propósta do nosso projeto é a criação de um aplicativo de delivery de serv
 <img width="50px" src="https://user-images.githubusercontent.com/77304506/175615822-fe0e19db-04b1-4009-b5ba-23f486103366.svg"></img>
 <img width="50px" src="https://user-images.githubusercontent.com/77304506/175616071-b625929d-e473-49ee-bd0f-652b408e2879.svg"></img>
 
-# Licença
+## Licença
 The MIT License (MIT)
 
 Copyright ©️ 2022 - WeServ
