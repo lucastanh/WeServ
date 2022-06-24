@@ -9,8 +9,8 @@ A propósta do nosso projeto é a criação de um aplicativo de delivery de serv
 
 ## Feramentas utilizadas
 
-![java-original](https://user-images.githubusercontent.com/77304506/175615178-764927e7-2ad4-4077-9029-53d3f69ffe64.svg)
-![68747470733a2f2f646576656c6f7065722e616e64726f69642e636f6d2f696d616765732f6c6f676f732f616e64726f69642e737667](https://user-images.githubusercontent.com/77304506/175615207-56c51ac7-03b6-44b0-84bf-ec0b40d4e508.svg)
+<img width="50px" src="https://user-images.githubusercontent.com/77304506/175615822-fe0e19db-04b1-4009-b5ba-23f486103366.svg"></img>
+<img width="50px" src="https://user-images.githubusercontent.com/77304506/175616071-b625929d-e473-49ee-bd0f-652b408e2879.svg"></img>
 
 # Licença
 The MIT License (MIT)
